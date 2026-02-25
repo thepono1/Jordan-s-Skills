@@ -1,0 +1,8 @@
+# Private ghostwriter data — never commit
+ghostwriter/raw_samples.txt
+ghostwriter/VOICE_PROFILE.md
+
+# Python cache
+**/__pycache__/
+*.pyc
+*.pyo
