@@ -19,7 +19,7 @@ This vault is a compilation. Full credit to the original creators — I've only 
 | **[@agentic.james](https://www.tiktok.com/@agentic.james)** | 142 TikTok videos on Claude Code mastery and agentic workflows | `commands/other/agentic-james/` |
 | **[@ariacodez](https://www.instagram.com/ariacodez/)** | 93 Instagram reels on AI tools, cybersecurity, and rapid dev | `commands/other/ariacodez/` |
 | **[GSD](https://github.com/botingw/gsd)** | Get Shit Done — hierarchical project management for solo agentic dev | `commands/other/gsd/` |
-| **Jordan Bee + Claude** | Built from scratch for a live quant trading system | `commands/quant/` (100+ commands), `ghostwriter/`, `solomon/`, `tradestars/`, core workflow skills |
+| **Jordan Bee + Claude** | Built from scratch for a live quant trading system | `commands/quant/` (100+ commands), `ghostwriter/`, `solomon/`, core workflow skills |
 
 **If I've missed a credit or misattributed anything, open an issue and I'll fix it immediately.**
 
@@ -312,7 +312,6 @@ Executes an implementation plan by dispatching one fresh subagent per task. Each
 | `obsidian-bases` | Obsidian Bases with views, filters, formulas |
 | `obsidian-cli` | Vault operations via CLI |
 | `defuddle` | Extract clean markdown from web pages |
-| `tradestars` | Tradestars research and meeting strategy |
 
 ### Additional Skills (`_skills_available/`)
 
