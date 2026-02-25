@@ -48,6 +48,32 @@ The most powerful and most used skills in this vault.
 
 ---
 
+### `/tap` — Turn Any Video Into Stored Expertise ⚡ Try This First
+
+**One of the most unique skills in this vault. Highly recommended.**
+
+Give it any YouTube, TikTok, or Instagram URL. It downloads the audio, transcribes it with Whisper, runs a deep expert analysis, and stores everything in your local knowledge vault — ready to query later.
+
+What it produces from a single video:
+- Full raw transcript stored and tagged
+- Expert analysis with core concepts, key takeaways, technical details, and connections to existing knowledge
+- A dense "expert summary" paragraph you can reference later without re-watching
+
+Run 10 videos in parallel. Your vault compounds over time.
+
+**Setup required:** `yt-dlp` + `whisper` + the memory MCP. See `tap/SKILL.md` for full setup.
+
+**Use when:** You want to extract and keep knowledge from any video — tutorials, talks, podcasts, courses, short-form content.
+
+```
+/tap https://youtube.com/watch?v=...
+/tap https://www.tiktok.com/@user/video/...
+```
+
+**To install:** Copy `tap/SKILL.md` to `~/.claude/commands/tap.md`
+
+---
+
 ### `/ghostwriter` — Transform AI Writing Into Human Voice
 
 **The most used skill in this vault.**
@@ -262,6 +288,7 @@ Executes an implementation plan by dispatching one fresh subagent per task. Each
 
 | Skill | What It Does |
 |-------|-------------|
+| `tap` | Transcribe any video URL → deep analysis → stored in knowledge vault |
 | `brainstorming` | Design-first workflow before any implementation |
 | `writing-plans` | Structured implementation plans from requirements |
 | `subagent-driven-development` | Parallel plan execution with per-task agents |
