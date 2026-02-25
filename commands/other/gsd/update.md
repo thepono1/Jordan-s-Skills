@@ -15,7 +15,7 @@ Provides a better update experience than raw `npx get-shit-done-cc` by showing v
 Read installed version:
 
 ```bash
-cat /Users/jordanbee/.claude/get-shit-done/VERSION 2>/dev/null
+cat ~/.claude/get-shit-done/VERSION 2>/dev/null
 ```
 
 **If VERSION file missing:**
@@ -106,12 +106,12 @@ STOP here if ahead.
 ────────────────────────────────────────────────────────────
 
 ⚠️  **Note:** The installer performs a clean install of GSD folders:
-- `/Users/jordanbee/.claude/commands/gsd/` will be wiped and replaced
-- `/Users/jordanbee/.claude/get-shit-done/` will be wiped and replaced
-- `/Users/jordanbee/.claude/agents/gsd-*` files will be replaced
+- `~/.claude/commands/gsd/` will be wiped and replaced
+- `~/.claude/get-shit-done/` will be wiped and replaced
+- `~/.claude/agents/gsd-*` files will be replaced
 
 Your custom files in other locations are preserved:
-- Custom commands in `/Users/jordanbee/.claude/commands/your-stuff/` ✓
+- Custom commands in `~/.claude/commands/your-stuff/` ✓
 - Custom agents not prefixed with `gsd-` ✓
 - Custom hooks ✓
 - Your CLAUDE.md files ✓
@@ -140,7 +140,7 @@ Capture output. If install fails, show error and STOP.
 Clear the update cache so statusline indicator disappears:
 
 ```bash
-rm -f /Users/jordanbee/.claude/cache/gsd-update-check.json
+rm -f ~/.claude/cache/gsd-update-check.json
 ```
 </step>
 

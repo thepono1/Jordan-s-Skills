@@ -37,7 +37,7 @@ Extract a short ID from the URL to create a unique filename:
 Set `VID` to this ID, then use `/tmp/tap_${VID}.mp3` as the temp file path.
 
 ```bash
-cd /Users/jordanbee/Desktop/short-form-video-transcriber
+cd ~/transcriber
 source .venv/bin/activate
 # Remove any existing file for this video ID
 rm -f "/tmp/tap_${VID}.mp3" "/tmp/tap_${VID}.mp3.part"
@@ -47,7 +47,7 @@ Replace $URL with the actual URL and $VID with the extracted video ID.
 
 ### Step 2: Transcribe with Whisper
 ```bash
-cd /Users/jordanbee/Desktop/short-form-video-transcriber
+cd ~/transcriber
 source .venv/bin/activate
 python3 -c "
 import whisper

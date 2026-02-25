@@ -13,7 +13,7 @@ time curl -s "https://api.kraken.com/0/public/Time" > /dev/null
 
 echo ""
 echo "VPS latency:"
-ping -c 3 69.169.111.9 2>/dev/null | tail -1 || echo "VPS unreachable"
+ping -c 3 YOUR_VPS_IP 2>/dev/null | tail -1 || echo "VPS unreachable"
 
 echo ""
 echo "=== WebSocket Status ==="

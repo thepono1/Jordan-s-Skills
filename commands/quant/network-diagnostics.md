@@ -38,7 +38,7 @@ echo ""
 echo "=== VPS CONNECTIVITY ==="
 
 # Ping VPS
-ping -c 3 69.169.111.9 2>&1 | tail -3
+ping -c 3 YOUR_VPS_IP 2>&1 | tail -3
 
 # SSH test
 timeout 5 ssh quantpod "echo 'SSH: OK'" 2>/dev/null || echo "SSH: FAILED or TIMEOUT"
@@ -60,7 +60,7 @@ echo "=== PORT CHECKS ==="
 
 # Check common ports
 nc -z -w5 api.kraken.com 443 && echo "Kraken 443: OPEN" || echo "Kraken 443: BLOCKED"
-nc -z -w5 69.169.111.9 22 && echo "VPS SSH 22: OPEN" || echo "VPS SSH 22: BLOCKED"
+nc -z -w5 YOUR_VPS_IP 22 && echo "VPS SSH 22: OPEN" || echo "VPS SSH 22: BLOCKED"
 ```
 
 ## 6. Latency Check
@@ -77,7 +77,7 @@ latency=$(python3 -c "print(f'{($end - $start) * 1000:.0f}ms')")
 echo "Kraken API latency: $latency"
 
 # VPS latency
-ssh_latency=$(ping -c 5 69.169.111.9 2>/dev/null | tail -1 | awk -F'/' '{print $5}')
+ssh_latency=$(ping -c 5 YOUR_VPS_IP 2>/dev/null | tail -1 | awk -F'/' '{print $5}')
 echo "VPS ping latency: ${ssh_latency}ms"
 ```
 

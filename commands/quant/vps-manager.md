@@ -12,7 +12,7 @@ Manage VPS (quantpod) services: check status, restart services, view logs, and t
 </objective>
 
 <context>
-VPS: quantpod (69.169.111.9)
+VPS: quantpod (YOUR_VPS_IP)
 Services:
 - alpha-chat-api.service
 - alpha-control-api.service
