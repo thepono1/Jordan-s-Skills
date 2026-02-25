@@ -1,27 +1,31 @@
 ---
 name: ghostwriter
 description: >
-  Transform AI-written documents into Jordan's polished professional voice.
-  Applies a 5-phase pipeline: context extraction → AI-pattern audit (24 patterns
-  from blader/humanizer) → Jordan's voice profile application → craft enhancement
-  → self-audit. Output is indistinguishable from a professional human ghostwriter.
-  Use when any document needs to sound like Jordan wrote it at his best.
+  Transform AI-written documents into a polished, professional human voice.
+  Applies a 5-phase pipeline: context extraction → AI-pattern audit (24 patterns)
+  → voice profile application → craft enhancement → self-audit.
+  Output is indistinguishable from a professional human ghostwriter.
+  Use when any document needs to sound like a real person wrote it at their best.
 ---
 
 # Ghostwriter Skill
 
-Rewrite AI-generated documents in Jordan's professional voice. Zero detectable AI patterns.
+Strip AI patterns from any document and rewrite it in a confident, natural human voice. Works for emails, LinkedIn posts, proposals, memos, reports, and more.
 
 ## Invocation
 
 ```
 /ghostwriter [text or file path]
+/ghostwriter "Here's my draft..."
+/ghostwriter docs/proposal.md
+/ghostwriter docs/proposal.md --voice my-voice-profile.md
 ```
 
 Provide either:
 - Raw text pasted inline
 - A file path (e.g. `/path/to/draft.md`)
 - A document type hint (e.g. "LinkedIn post", "client email", "technical memo")
+- An optional `--voice` flag pointing to your personal voice profile (see setup below)
 
 ---
 
@@ -30,15 +34,15 @@ Provide either:
 Before rewriting, identify:
 
 1. **Document type**: Email / memo / LinkedIn post / report / proposal / other
-2. **Audience**: Technical peer / client / investor / general
+2. **Audience**: Technical peer / client / investor / general public
 3. **Purpose**: Inform / persuade / update / pitch / connect
-4. **Load voice profile**: Read `~/.claude/skills/ghostwriter/VOICE_PROFILE.md`
+4. **Voice profile**: If `--voice` is provided, load it. Otherwise, use universal professional defaults (Phase 3).
 
 ---
 
 ## Phase 2 — AI Pattern Audit
 
-Scan the input for all 24 AI tells. Flag each instance.
+Scan the input for all 24 AI tells. Flag every instance before rewriting.
 
 ### Content Patterns
 1. **Significance inflation** — treating minor points as revelations ("This is a game-changer", "Crucially important")
@@ -74,26 +78,30 @@ Scan the input for all 24 AI tells. Flag each instance.
 
 ---
 
-## Phase 3 — Jordan's Voice Application
+## Phase 3 — Voice Application
 
-Load `~/.claude/skills/ghostwriter/VOICE_PROFILE.md` and apply:
+### If a voice profile is provided (`--voice`)
+Load the file and apply the writer's specific vocabulary, tone, structure preferences, and known anti-patterns.
 
-### Vocabulary
-- Swap AI vocabulary for Jordan's preferred words and phrases
-- Enforce the anti-pattern list — if Jordan never writes it, remove it
+### If no voice profile (default)
+Apply universal professional writing standards:
+
+**Vocabulary**
+- Replace all flagged AI vocabulary (Phase 2, item 7) with direct, plain alternatives
 - Use natural contractions: "I'll", "we're", "I've", "that's"
-- No casual abbreviations: no lmk, tbh, fyi, btw, lol, emoji
+- No formal over-reach: avoid "utilize" (use "use"), "commence" (use "start"), "endeavor" (use "try")
 
-### Structure
+**Structure**
 - Short paragraphs: 2-4 sentences
 - Lists only for genuinely multi-item content — not as a default format
 - No em dashes for rhythm, no mid-sentence colons for emphasis
 - No Title Case on concepts
 
-### Directness
+**Directness**
 - Remove hedging that doesn't serve a purpose
-- State opinions directly — no "it could be argued that..."
+- State positions directly — no "it could be argued that..."
 - Cut filler openers — start with the substance
+- End with the actual point, not a restatement
 
 ---
 
@@ -103,7 +111,7 @@ Load `~/.claude/skills/ghostwriter/VOICE_PROFILE.md` and apply:
 - **Body**: Setup → insight → resolution. Cut anything that doesn't advance this.
 - **Closing**: End on the actual point or a clear next step. No restatement.
 - **Sentence rhythm**: Vary length — short for emphasis, longer for context. Never uniform.
-- Cut ruthlessly — Jordan doesn't pad.
+- Cut ruthlessly — padding is the enemy of credibility.
 
 ---
 
@@ -116,7 +124,6 @@ Before delivering, verify:
 - [ ] Opener leads with substance
 - [ ] Closer ends on the actual point
 - [ ] No inline headers used decoratively
-- [ ] No casual abbreviations or emoji
 - [ ] Reads naturally at pace
 
 ### Output format
@@ -137,8 +144,45 @@ Ghostwriter's note:
 
 ---
 
+## Optional: Build Your Own Voice Profile
+
+To get output that sounds specifically like *you*, create a voice profile and pass it with `--voice`.
+
+Your voice profile should capture:
+
+```markdown
+# [Your Name] — Voice Profile
+
+## Core Voice
+[2-3 sentences describing your general communication style]
+
+## Vocabulary
+- Words/phrases you use often
+- Words you never use
+- Contractions: yes/no/sometimes
+
+## Structure
+- Paragraph length preference
+- How you open emails/posts
+- How you close them
+
+## Tone by Context
+- Professional emails: [describe]
+- LinkedIn posts: [describe]
+- Internal memos: [describe]
+
+## Hard Rules
+- Things you never write (e.g. "I hope this email finds you well")
+- Formatting preferences (bullet points? headers? plain prose?)
+```
+
+Save it anywhere on your machine and reference it with `--voice /path/to/profile.md`.
+
+---
+
 ## Notes
 
-- `VOICE_PROFILE.md` must exist — run `extract_voice_data.py` first if it's missing
+- Works on any document type: emails, LinkedIn, proposals, memos, cover letters, Slack messages, blog posts
 - For long documents (>2000 words), rewrite section by section
-- The ghostwriter's note is for Jordan only — strip it before sending to external audiences
+- The ghostwriter's note is for your review — strip it before sending to external audiences
+- The 24-pattern audit in Phase 2 works standalone — run it on any draft to get a plain-English list of what to fix
