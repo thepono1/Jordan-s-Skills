@@ -1,5 +1,7 @@
 # Jordan's Skills
 
+⭐ **If this vault saves you time, drop a star. It helps others find it.**
+
 A complete vault of Claude Code skills for serious builders — covering product development, AI-assisted workflows, trading systems, writing, debugging, and deployment.
 
 These are the skills I use daily. They make Claude significantly more capable by giving it precise, repeatable instructions for complex workflows. Treat each skill as a specialized expert you can summon on demand.
@@ -421,3 +423,7 @@ git clone https://github.com/thepono1/Jordan-s-Skills ~/.claude/skills
 ---
 
 Built for Claude Code. Works with any Claude model.
+
+---
+
+If this vault made Claude more useful for you, hit the ⭐ star button at the top of the page. It takes two seconds and helps other builders find it.
